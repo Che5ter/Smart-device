@@ -1,0 +1,11 @@
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 255px;
+}
+
+.main-nav__logo {
+  display: flex;
+  flex-direction: row;
+}
