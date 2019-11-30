@@ -1,11 +1,98 @@
 .main-nav {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0 255px;
+  align-items: center;
+  width: 100%;
+  padding-top: 32px;
 }
 
 .main-nav__logo {
   display: flex;
   flex-direction: row;
+}
+
+.main-nav__logo-text {
+  padding-left: 18px;
+  padding-top: 6px;
+}
+
+.main-nav__logo-text p {
+  margin: 0;
+
+  &:first-child {
+    font-family: $roboto-condensed;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+  }
+
+  &:nth-child(2) {
+    font-family: $roboto;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #788891;
+  }
+}
+
+.main-nav__menu {
+  display: block;
+  position: relative;
+  width: 40px;
+  height: 20px;
+  margin-left: 116px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.main-nav--closed .main-nav__menu::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 1px;
+  width: 37px;
+  height: 1px;
+  background-color: #ffffffff;
+  box-shadow: 0 12px 0 0 #ffffffff;
+}
+
+.main-nav__link {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+  font-family: $pt-mono;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.main-nav__link--mail {
+  margin-right: 90px;
+}
+
+.main-nav__link--mail span {
+  margin-left: 19px;
+}
+
+.main-nav__feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 180px;
+  min-height: 45px;
+  padding: 0 30px;
+  border: 1px solid #ffffffff;
+  border-radius: 5px;
+  font-family: $roboto-condensed;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.main-nav__contact {
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
 }
