@@ -3,3 +3,51 @@
   background: url("../img/promo-background-desk@1x.png") no-repeat;
   background-color: #1b2d37;
 }
+
+.promo__description {
+  display: flex;
+  flex-direction: row;
+  max-width: 1437px;
+  margin: 0 auto;
+  color: $primary-text-color;
+}
+
+.promo__description-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.promo__description-text p {
+  font-size: 22px;
+  line-height: 34px;
+}
+
+.promo__title {
+  font-weight: bold;
+  font-size: 80px;
+  line-height: 94px;
+}
+
+.promo__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 407px;
+  min-height: 55px;
+  padding: 0 26px;
+  margin-right: 4px;
+  background-color: #00b2ff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-family: $roboto-condensed;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.promo__description-image {
+  background: url("../img/promo-polygon.svg") no-repeat;
+}
