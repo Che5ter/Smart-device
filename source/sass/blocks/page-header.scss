@@ -1,6 +1,13 @@
 .page-header {
   display: flex;
-  max-width: 1415px;
+  max-width: 1437px;
   flex-direction: row;
   margin: 0 auto;
+  padding: 0 10px;
+}
+
+@media (max-width: $tablet-width) {
+  .page-header {
+    padding: 0;
+  }
 }
