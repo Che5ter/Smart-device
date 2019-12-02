@@ -1,7 +1,6 @@
 .promo {
   background: url("../img/promo-background-desk@1x.png") round;
   background-color: #1b2d37;
-  min-height: 879px;
 }
 
 .promo__description {
@@ -11,7 +10,7 @@
   margin: 0 auto;
   padding: 0 71px;
   background: url("../img/board-desktop@1x.png") 868px 175px no-repeat,
-              url("../img/promo-polygon.png") 783px 55px no-repeat;
+    url("../img/promo-polygon.png") 783px 55px no-repeat;
   color: $primary-text-color;
 }
 
@@ -21,7 +20,7 @@
   width: 60%;
   padding-left: 8px;
   padding-top: 230px;
-  padding-bottom: 160px;
+  padding-bottom: 259px;
 }
 
 .promo__description-text p {
@@ -42,6 +41,7 @@
   left: 3px;
   background-color: $primary-text-color;
 }
+
 .promo__title {
   font-weight: bold;
   font-size: 80px;
@@ -98,6 +98,7 @@
     width: 72%;
     padding-left: 16px;
     padding-top: 117px;
+    padding-bottom: 161px;
   }
 
   .promo__description-text p {
@@ -120,7 +121,7 @@
 
   .promo__description {
     background: url("../img/board-tablet@1x.png") right 42px no-repeat,
-                url("../img/promo-polygon-tablet.png") right -10px no-repeat;
+      url("../img/promo-polygon-tablet.png") right -10px no-repeat;
   }
 
   .promo__link--scroll {
@@ -151,15 +152,12 @@
 
   .promo__description {
     padding: 0;
+    background: url("../img/board-mobile@1x.png") right 37px no-repeat,
+      url("../img/promo-polygon-mobile.png") right -25px no-repeat;
   }
 
   .promo__link--advice {
     margin: 0;
     margin-top: 24px;
-  }
-
-  .promo__description {
-    background: url("../img/board-mobile@1x.png") right 37px no-repeat,
-                url("../img/promo-polygon-mobile.png") right -25px no-repeat;
   }
 }

@@ -1,0 +1,153 @@
+.advantages {
+  margin-top: 81px;
+  margin-bottom: 102px;
+}
+
+.advantages__wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.advantages__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.advantages__item {
+  max-width: 48.7%;
+  min-height: 300px;
+  border: 1px solid #ebebeb;
+  border-left: 3px solid $title-text-color;
+  margin-top: 30px;
+}
+
+.advantages__item:nth-child(2n-1) {
+  margin-right: 30px;
+}
+
+.advantages__item h3 {
+  padding-top: 15px;
+  padding-left: 42px;
+  padding-right: 43px;
+  font-size: 24px;
+  line-height: 34px;
+  color: $title-text-color;
+}
+
+.advantages__item p {
+  padding-top: 1px;
+  padding-left: 43px;
+  padding-right: 43px;
+  padding-bottom: 49px;
+  font-size: 16px;
+  line-height: 22px;
+  color: $secondary-text-color;
+}
+
+.advantages__icon {
+  padding-left: 42px;
+  padding-top: 40px;
+}
+
+.advantages__icon svg {
+  stroke: $title-text-color;
+}
+
+.advantages__icon--confidentiality div {
+  padding-top: 41px;
+}
+
+.advantages__item:hover {
+  background-color: $title-text-color;
+}
+
+.advantages__item:hover h3,
+.advantages__item:hover p, {
+  color: $primary-text-color;
+}
+
+.advantages__item:hover .advantages__icon svg {
+  stroke: $primary-text-color;
+}
+
+@media (max-width: 1160px) {
+  .advantages__item:nth-child(2n-1) {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .advantages {
+    margin-bottom: -9px;
+    margin-top: 27px;
+  }
+
+  .advantages__item {
+    max-width: 345px;
+  }
+
+  .advantages__item:nth-child(2n-1) {
+    margin-right: 30px;
+  }
+
+  .advantages__list {
+    justify-content: center;
+  }
+
+  .advantages__item h3 {
+    padding-top: 4px;
+    padding-left: 24px;
+    padding-right: 43px;
+    padding-bottom: 7px;
+  }
+
+  .advantages__item p {
+    padding-top: 1px;
+    padding-right: 24px;
+    padding-bottom: 19px;
+    padding-left: 24px;
+    margin: 0;
+  }
+
+  .advantages__icon {
+    padding-left: 25px;
+    padding-top: 23px;
+  }
+
+  .advantages__item--price h3 {
+    padding-right: 5px;
+  }
+
+  .advantages__item--confidentiality h3 {
+    padding-right: 5px;
+  }
+
+  .advantages__item--clocks .advantages__icon svg {
+    width: 30px;
+    height: 35px;
+  }
+
+  .advantages__item--hired .advantages__icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .advantages__item--confidentiality .advantages__icon svg {
+    width: 30px;
+    height: 26px;
+  }
+
+  .advantages__item--price .advantages__icon svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .advantages__item {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,88 @@
+.about-company {
+  margin-bottom: 150px;
+}
+
+.about-company__wrapper {
+  max-width: 1200px;
+  min-height: 325px;
+  margin: 0 auto;
+  padding-left: 195px;
+  padding-right: 25px;
+  background: url("../img/2005-desktop@1x.png") -15px 5px no-repeat;
+}
+
+.about-company__title {
+  font-size: 36px;
+  line-height: 51px;
+  color: $secondary-text-color;
+}
+
+.about-company__wrapper p {
+  padding-top: 6px;
+  font-size: 16px;
+  line-height: 22px;
+  color: $secondary-text-color;
+}
+
+.about-company__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 180px;
+  min-height: 45px;
+  padding: 0 26px;
+  background-color: $primary-text-color;
+  color: $title-text-color;
+  border: 1px solid $title-text-color;
+  border-radius: 5px;
+  font-family: $roboto-condensed;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 37px;
+}
+
+@media (max-width: $tablet-width) {
+  .about-company__title {
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  .about-company__wrapper {
+    padding-left: 213px;
+    background: url("../img/2005-tablet@1x.png") -1px -2px no-repeat;
+  }
+
+  .about-company__wrapper p:first-child {
+    padding-top: 15px;
+  }
+
+  .about-company__link {
+    margin-top: 42px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .about-company__wrapper {
+    background: none;
+    padding-left: 16px;
+    padding-right: 15px;
+    margin-top: 49px;
+  }
+
+  .about-company__title {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .about-company__wrapper .about-company__js-text-change {
+    padding-top: 23px;
+  }
+
+  .about-company__link {
+    margin-top: 28px;
+  }
+}
