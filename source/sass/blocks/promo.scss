@@ -1,35 +1,56 @@
 .promo {
-  min-height: 950px;
-  background: url("../img/promo-background-desk@1x.png") no-repeat;
+  background: url("../img/promo-background-desk@1x.png") round;
   background-color: #1b2d37;
+  min-height: 879px;
 }
 
 .promo__description {
   display: flex;
   flex-direction: row;
-  max-width: 1437px;
+  max-width: 1580px;
   margin: 0 auto;
+  padding: 0 71px;
+  background: url("../img/board-desktop@1x.png") 868px 175px no-repeat,
+              url("../img/promo-polygon.png") 783px 55px no-repeat;
   color: $primary-text-color;
 }
 
 .promo__description-text {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
+  padding-left: 8px;
+  padding-top: 230px;
+  padding-bottom: 160px;
 }
 
 .promo__description-text p {
+  position: relative;
+  padding-top: 6px;
+  padding-left: 99px;
+  padding-right: 60px;
   font-size: 22px;
   line-height: 34px;
 }
 
+.promo__description-text p::before {
+  content: "";
+  position: absolute;
+  width: 66px;
+  height: 2px;
+  top: 23px;
+  left: 3px;
+  background-color: $primary-text-color;
+}
 .promo__title {
   font-weight: bold;
   font-size: 80px;
   line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
-.promo__link {
+.promo__link--advice {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,8 +58,9 @@
   min-height: 55px;
   padding: 0 26px;
   margin-right: 4px;
+  margin-left: 96px;
+  margin-top: 23px;
   background-color: #00b2ff;
-  border: 1px solid #ffffff;
   border-radius: 5px;
   font-family: $roboto-condensed;
   font-weight: bold;
@@ -46,8 +68,98 @@
   line-height: 19px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-align: center;
 }
 
-.promo__description-image {
-  background: url("../img/promo-polygon.svg") no-repeat;
+.promo__link--scroll {
+  width: 100px;
+  transform: rotate(-90deg) translate(-127px, -39px);
+  font-family: $pt-mono;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.5;
+}
+
+@media (max-width: $tablet-width) {
+  .promo {
+    background: url("../img/promo-background-desk@1x.png") no-repeat;
+    background-color: #1b2d37;
+  }
+
+  .promo__title {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .promo__description-text {
+    width: 72%;
+    padding-left: 16px;
+    padding-top: 117px;
+  }
+
+  .promo__description-text p {
+    font-size: 18px;
+    line-height: 28px;
+    padding-top: 11px;
+    padding-left: 52px;
+    padding-right: 45px;
+  }
+
+  .promo__link--advice {
+    margin-left: 52px;
+    margin-top: 37px;
+  }
+
+  .promo__description-text p::before {
+    width: 34px;
+    top: 27px;
+  }
+
+  .promo__description {
+    background: url("../img/board-tablet@1x.png") right 42px no-repeat,
+                url("../img/promo-polygon-tablet.png") right -10px no-repeat;
+  }
+
+  .promo__link--scroll {
+    @include visually-hidden;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .promo__title {
+    font-size: 40px;
+    line-height: 47px;
+  }
+
+  .promo__description-text p {
+    font-size: 16px;
+    line-height: 25px;
+    padding-left: 51px;
+    padding-right: 15px;
+  }
+
+  .promo__description-text {
+    width: 100%;
+    padding-top: 231px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 70px;
+  }
+
+  .promo__description {
+    padding: 0;
+  }
+
+  .promo__link--advice {
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  .promo__description {
+    background: url("../img/board-mobile@1x.png") right 37px no-repeat,
+                url("../img/promo-polygon-mobile.png") right -25px no-repeat;
+  }
 }
