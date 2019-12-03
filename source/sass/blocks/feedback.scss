@@ -1,0 +1,269 @@
+.feedback {
+  margin-bottom: 150px;
+  background: url("../img/airplane@1x.png") 350px 161px no-repeat,
+    url("../img/polygon-feedback.svg") 196px 93px no-repeat;
+  background-color: $title-text-color;
+}
+
+.feedback__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  max-width: 1197px;
+  margin: 0 auto;
+  padding: 0 15px;
+  padding-top: 90px;
+}
+
+.feedback__form {
+  max-width: 570px;
+  min-height: 244px;
+}
+
+.feedback__form h3 {
+  font-weight: normal;
+  color: $primary-text-color;
+  font-size: 36px;
+  line-height: 51px;
+}
+
+.feedback__form p {
+  margin: 0;
+  padding-left: 4px;
+  padding-top: 11px;
+}
+
+.feedback__form p,
+.feedback__form label {
+  font-size: 16px;
+  line-height: 22px;
+  color: $primary-text-color;
+  font-family: $pt-mono;
+}
+
+.feedback__form input::-webkit-input-placeholder,
+.feedback__form textarea::-webkit-input-placeholder {
+  color: $primary-text-color;
+}
+
+.feedback__form input:-ms-input-placeholder,
+.feedback__form textarea:-ms-input-placeholder {
+  color: $primary-text-color;
+}
+
+.feedback__form input::-moz-placeholder,
+.feedback__form textarea::-moz-placeholder {
+  color: $primary-text-color;
+}
+
+.feedback__form input:-moz-placeholder,
+.feedback__form textarea:-moz-placeholder {
+  color: $primary-text-color;
+}
+
+.feedback__form input[type="text"] {
+  min-width: 270px;
+}
+
+.feedback__form input[type="tel"] {
+  min-width: 269px;
+}
+
+.feedback__form input[type="text"],
+.feedback__form input[type="tel"],
+.feedback__form textarea {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-left: 18px;
+  padding-right: 15px;
+  font-family: $pt-mono;
+  font-size: 16px;
+  line-height: 22px;
+  background-color: #19baff;
+  border: none;
+}
+
+.feedback__form textarea {
+  width: 100%;
+  min-height: 154px;
+  resize: none;
+}
+
+.feedback__contacts {
+  margin-top: 50px;
+  margin-bottom: 38px;
+}
+
+.feedback__contacts input[type="text"] {
+  margin-right: 27px;
+}
+
+.feedback__form button {
+  padding: 0 15px;
+  background: #00b2ff;
+  border: 1px solid $primary-text-color;
+  color: $primary-text-color;
+  border-radius: 5px;
+  min-width: 270px;
+  min-height: 45px;
+  font-family: $roboto-condensed;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.feedback__submit {
+  display: flex;
+  margin-top: 42px;
+  margin-left: 1px;
+  margin-bottom: 113px;
+}
+
+.feedback__submit label {
+  position: relative;
+  padding-left: 70px;
+  padding-top: 8px;
+  font-size: 14px;
+  line-height: 16px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: 38px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $primary-text-color;
+  }
+}
+
+.feedback__submit input[type="checkbox"]:checked + label::before {
+  background: url("../img/vector-checkbox.svg") 50% 50% no-repeat;
+}
+
+@media (max-width: $tablet-width) {
+  .feedback {
+    background-image: none;
+  }
+
+  .feedback__form {
+    max-width: 590.85px;
+  }
+
+  .feedback__wrapper {
+    justify-content: center;
+    padding-top: 80px;
+  }
+
+  .feedback__form h3 {
+    font-size: 32px;
+    line-height: 45px;
+  }
+
+  .feedback__form input[type="text"] {
+    min-width: 279.88px;
+  }
+
+  .feedback__form input[type="tel"] {
+    min-width: 278.84px;
+  }
+
+  .feedback__form p {
+    padding-top: 16px;
+  }
+
+  .feedback__form input[type="tel"],
+  .feedback__form input[type="text"],
+  .feedback__form textarea {
+    padding: 16px 14px 17px 20px;
+  }
+
+  .feedback__submit {
+    margin-top: 51px;
+  }
+
+  .feedback__submit button {
+    min-width: 280.88px;
+  }
+
+  .feedback__submit label {
+    padding-left: 73px;
+
+    &::before {
+      top: 9px;
+      left: 41px;
+    }
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .feedback__contacts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-bottom: 31px;
+  }
+
+  .feedback__wrapper {
+    min-width: 290px;
+    padding-top: 0;
+  }
+
+  .feedback__form input[type="text"],
+  .feedback__form input[type="tel"] {
+    min-width: 290px;
+  }
+
+  .feedback__form input[type="text"] {
+    margin-right: 0;
+  }
+
+  .feedback__submit {
+    display: flex;
+    flex-direction: column;
+    margin-top: 27px;
+    margin-bottom: 43px;
+  }
+
+  .feedback__form h3 {
+    padding-top: 30px;
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .feedback__form p {
+    padding-top: 12px;
+    padding-left: 0;
+  }
+
+  .feedback__contacts input[type="text"] {
+    margin-bottom: 28px;
+    padding-top: 14px;
+    padding-left: 17px;
+  }
+
+  .feedback__contacts input[type="tel"] {
+    padding-top: 15px;
+    padding-left: 17px;
+  }
+
+  .feedback__form textarea {
+    padding-left: 17px;
+    padding-top: 11px;
+    min-height: 104px;
+  }
+
+  .feedback__submit label {
+    padding-left: 33px;
+    padding-top: 0;
+    margin-top: 31px;
+
+    &::before {
+      top: 1;
+      left: 0;
+    }
+  }
+}

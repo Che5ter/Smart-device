@@ -1,5 +1,6 @@
 .about-company {
-  margin-bottom: 150px;
+  margin-bottom: 94px;
+  margin-top: 77px;
 }
 
 .about-company__wrapper {
@@ -66,6 +67,11 @@
 }
 
 @media (max-width: $mobile-width) {
+  .about-company {
+    margin-bottom: 65px;
+    margin-top: 65px;
+  }
+
   .about-company__wrapper {
     background: none;
     padding-left: 16px;

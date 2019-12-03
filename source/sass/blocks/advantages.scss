@@ -4,7 +4,8 @@
 }
 
 .advantages__wrapper {
-  max-width: 1170px;
+  max-width: 1201px;
+  padding: 0 15px;
   margin: 0 auto;
 }
 
@@ -17,7 +18,7 @@
 }
 
 .advantages__item {
-  max-width: 48.7%;
+  max-width: calc((100% - 30px) / 2);
   min-height: 300px;
   border: 1px solid #ebebeb;
   border-left: 3px solid $title-text-color;
@@ -35,6 +36,7 @@
   font-size: 24px;
   line-height: 34px;
   color: $title-text-color;
+  font-weight: normal;
 }
 
 .advantages__item p {
@@ -56,8 +58,8 @@
   stroke: $title-text-color;
 }
 
-.advantages__icon--confidentiality div {
-  padding-top: 41px;
+.advantages__item--confidentiality {
+  padding-top: 2px;
 }
 
 .advantages__item:hover {
@@ -73,10 +75,10 @@
   stroke: $primary-text-color;
 }
 
-@media (max-width: 1160px) {
-  .advantages__item:nth-child(2n-1) {
-    margin-right: 0;
-  }
+.advantages__item--price p {
+  margin: 0;
+  padding-top: 15px;
+  padding-left: 42px;
 }
 
 @media (max-width: $tablet-width) {
@@ -85,8 +87,13 @@
     margin-top: 27px;
   }
 
+  .advantages__wrapper {
+    padding: 0 25px;
+  }
+
   .advantages__item {
-    max-width: 345px;
+    min-height: auto;
+    min-width: 345px;
   }
 
   .advantages__item:nth-child(2n-1) {
@@ -98,7 +105,7 @@
   }
 
   .advantages__item h3 {
-    padding-top: 4px;
+    padding-top: 5px;
     padding-left: 24px;
     padding-right: 43px;
     padding-bottom: 7px;
@@ -107,7 +114,7 @@
   .advantages__item p {
     padding-top: 1px;
     padding-right: 24px;
-    padding-bottom: 19px;
+    padding-bottom: 23px;
     padding-left: 24px;
     margin: 0;
   }
@@ -144,10 +151,76 @@
     width: 32px;
     height: 32px;
   }
+
+  .advantages__item--confidentiality p {
+    padding-top: 9px;
+  }
 }
 
-@media (max-width: $tablet-width) {
+@media (max-width: $mobile-width) {
+  .advantages {
+    margin-top: 7px;
+  }
+
+  .advantages__wrapper {
+    padding: 0 14px;
+  }
+
+  .advantages__list {
+    flex-direction: column;
+  }
+
   .advantages__item {
-    min-height: auto;
+    min-width: 290px;
+  }
+
+  .advantages__item h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .advantages__item--clocks h3 {
+    padding-top: 9px;
+  }
+
+  .advantages__item--hired .advantages__icon {
+    padding-top: 15px;
+  }
+
+  .advantages__item--hired h3 {
+    padding-top: 14px;
+  }
+
+  .advantages__item--hired p {
+    padding-right: 0;
+  }
+
+  .advantages__item--confidentiality h3 {
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 0;
+  }
+
+  .advantages__item--confidentiality p {
+    padding-bottom: 44px;
+    padding-top: 0;
+  }
+
+  .advantages__item--confidentiality .advantages__icon {
+    padding-top: 14px;
+  }
+
+  .advantages__item--price .advantages__icon {
+    padding-top: 14px;
+  }
+
+  .advantages__item--price h3 {
+    padding-top: 7px;
+  }
+
+  .advantages__item--price p {
+    padding-right: 15px;
+    padding-top: 4px;
+    padding-bottom: 26px;
   }
 }
