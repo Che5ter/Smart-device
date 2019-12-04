@@ -1,0 +1,358 @@
+.page-footer {
+  margin-bottom: 15px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 199px;
+    background-color: #626962;
+  }
+}
+
+.page-footer__wrapper {
+  max-width: 1448px;
+  padding: 0 15px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.page-footer__logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.page-footer__logo-text {
+  padding-left: 18px;
+  padding-top: 6px;
+}
+
+.page-footer__logo-text p {
+  margin: 0;
+}
+
+.page-footer__logo-text p:first-child {
+  font-family: $roboto-condensed;
+  font-size: 25px;
+  line-height: 29px;
+  color: #203c42;
+  font-weight: bold;
+}
+
+.page-footer__logo-text p:nth-child(2) {
+  font-family: $roboto;
+  font-size: 12px;
+  line-height: 14px;
+  color: #788891;
+}
+
+.page-footer__list {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.page-footer__list.social {
+  margin-top: 54px;
+}
+
+.social .page-footer__item {
+  margin-right: 16px;
+}
+
+.page-footer__info-block {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.page-footer__site-map h3,
+.page-footer__contacts h3 {
+  margin-bottom: 25px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 15px;
+  line-height: 16px;
+  color: #1b2d37;
+  font-weight: normal;
+}
+
+.page-footer__site-map {
+  width: 41.5%;
+  margin-right: -48px;
+  margin-left: auto;
+}
+
+.page-footer__list.site-map {
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 100px;
+}
+
+.page-footer__list.site-map a {
+  font-family: $pt-mono;
+  color: rgba(27, 45, 55, 0.5);
+  font-size: 15px;
+  line-height: 25px;
+}
+
+.page-footer__contacts {
+  margin-left: auto;
+  margin-right: 4px;
+}
+
+.page-footer__contacts p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 25px;
+  color: rgba(27, 45, 55, 0.5);
+}
+
+.page-footer__copyrights span {
+  color: rgba(27, 45, 55, 0.5);
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.page-footer__dates {
+  @include visually-hidden;
+}
+
+.page-footer__copyrights {
+  margin-top: 72px;
+}
+
+.page-footer__copyrights span:last-child {
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.page-footer__copyrights span:nth-child(2) {
+  margin-left: 75px;
+}
+
+.page-footer__copyrights span:nth-child(3) {
+  margin-left: 142px;
+}
+
+.page-footer__logo-text p:first-child:hover {
+  color: $title-text-color;
+}
+
+.page-footer__logo-text p:first-child:active {
+  color: rgba(0, 178, 255, 0.3);
+}
+
+.page-footer__link svg {
+  fill: #cdcdcd;
+}
+
+.page-footer__link:hover svg {
+  fill: $title-text-color;
+}
+
+.page-footer__link:active svg {
+  fill: rgba(0, 178, 255, 0.3);
+}
+
+.site-map a:hover {
+  color: $title-text-color;
+}
+
+@media (max-width: $tablet-width) {
+  .page-footer {
+    &::after {
+      top: 77px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      top: 368px;
+      background-color: #626962;
+    }
+  }
+
+  .page-footer__wrapper {
+    flex-direction: column;
+    padding: 0 24px;
+  }
+
+  .page-footer__social {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .page-footer__list.social {
+    margin-top: 12px;
+    margin-left: auto;
+    margin-right: -16px;
+  }
+
+  .page-footer__site-map {
+    margin-left: 0;
+  }
+
+  .page-footer__list.site-map {
+    max-height: initial;
+  }
+
+  .page-footer__copyrights .page-footer__wrapper {
+    flex-direction: row;
+  }
+
+  .page-footer__copyrights span:first-child,
+  .page-footer__copyrights span:nth-child(2) {
+    @include visually-hidden;
+  }
+
+  .page-footer__copyrights span:last-child {
+    margin-left: auto;
+    margin-right: 2px;
+  }
+
+  .page-footer__dates:not(:focus):not(:active) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -15px;
+    margin-top: 4px;
+    margin-left: auto;
+    font-size: 13px;
+    line-height: 24px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: rgba(27, 45, 55, 0.5);
+    position: static;
+    width: auto;
+    height: auto;
+    border: 0;
+    padding: 0;
+    white-space: normal;
+    clip-path: none;
+    clip: auto;
+    overflow: visible;
+  }
+
+  .page-footer__info-block {
+    margin-top: 64px;
+  }
+
+  .page-footer__site-map h3 {
+    padding-left: 3px;
+  }
+
+  .page-footer__contacts {
+    margin-right: 12px;
+  }
+
+  .page-footer__copyrights span:nth-child(3) {
+    padding-left: 3px;
+    margin-left: 1px;
+  }
+
+  .page-footer__copyrights {
+    margin-top: 58px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .page-footer {
+    &::before {
+      top: 315px;
+    }
+
+    &::after {
+      top: 241px;
+      box-shadow: 0 300px 0 0 #626962;
+    }
+  }
+
+  .page-footer__social {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-footer__list.social {
+    margin-left: 0;
+    margin-top: 34px;
+  }
+
+  .page-footer__dates:not(:focus):not(:active) {
+    margin-top: 25px;
+    margin-left: -15px;
+  }
+
+  .page-footer__info-block {
+    flex-direction: column;
+    position: relative;
+  }
+
+  .page-footer__contacts {
+    margin-top: 31px;
+    margin-left: -9px;
+  }
+
+  .page-footer__copyrights .page-footer__wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 55px;
+  }
+
+  .page-footer__copyrights span:last-child {
+    margin-left: 0;
+    padding-top: 20px;
+  }
+
+  .page-footer__toggle-button {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: none;
+
+    &--map-open {
+      right: -11px;
+      top: 15px;
+      background: url("../img/icon-plus.svg") no-repeat;
+    }
+
+    &--contact-open {
+      right: 0;
+      top: 15px;
+      background: url("../img/icon-plus.svg") no-repeat;
+    }
+
+    &--contact-close {
+      right: -11px;
+      top: 93px;
+      background: url("../img/icon-minus.svg") no-repeat;
+    }
+  }
+
+  .page-footer__site-map {
+    width: auto;
+  }
+
+  .page-footer__site-map h3 {
+    margin-left: -13px;
+    margin-top: 15px;
+  }
+
+  .page-footer__contacts h3 {
+    margin-bottom: 32px;
+  }
+
+  .page-footer__copyrights span:nth-child(3) {
+    margin-top: -4px;
+  }
+}

@@ -6,7 +6,7 @@
   max-width: 1203px;
   margin: 0 auto;
   padding: 0 15px;
-  padding-bottom: 127px;
+  padding-bottom: 123px;
 }
 
 .goods__list {
@@ -68,11 +68,11 @@
 
 @media (max-width: $tablet-width) {
   .goods {
-    margin-top: 169px;
+    margin-top: 82px;
   }
 
   .goods__wrapper {
-    padding-bottom: 81px;
+    padding-bottom: 69px;
   }
 
   .goods__item {
@@ -111,6 +111,10 @@
   .goods__item:nth-child(3n) {
     margin-right: 27px;
   }
+
+  .goods__link img {
+    height: 256px;
+  }
 }
 
 @media (max-width: $mobile-width) {
@@ -123,7 +127,7 @@
   }
 
   .goods__item {
-    margin-top: 41px;
+    margin-top: 37px;
     margin-left: 15px;
     margin-bottom: -9px;
     margin-right: 15px;
@@ -133,5 +137,9 @@
     font-size: 28px;
     line-height: 39px;
     padding-right: 0;
+  }
+
+  .page-footer__social {
+    padding-top: 27px;
   }
 }

@@ -1,5 +1,5 @@
 .feedback {
-  margin-bottom: 150px;
+  margin-bottom: 65px;
   background: url("../img/airplane@1x.png") 350px 161px no-repeat,
     url("../img/polygon-feedback.svg") 196px 93px no-repeat;
   background-color: $title-text-color;
@@ -18,6 +18,7 @@
 .feedback__form {
   max-width: 570px;
   min-height: 244px;
+  background-color: $title-text-color;
 }
 
 .feedback__form h3 {
@@ -122,6 +123,20 @@
   margin-bottom: 113px;
 }
 
+.feedback__submit label,
+.feedback__submit button, {
+  cursor: pointer;
+}
+
+.feedback__submit button:hover {
+  background-color: $primary-text-color;
+  color: $title-text-color;
+}
+
+.feedback__submit button:active {
+  color: rgba(0, 178, 255, 0.3);
+}
+
 .feedback__submit label {
   position: relative;
   padding-left: 70px;
@@ -147,6 +162,7 @@
 @media (max-width: $tablet-width) {
   .feedback {
     background-image: none;
+    margin-bottom: 19px;
   }
 
   .feedback__form {
@@ -183,6 +199,7 @@
 
   .feedback__submit {
     margin-top: 51px;
+    margin-bottom: 104px;
   }
 
   .feedback__submit button {

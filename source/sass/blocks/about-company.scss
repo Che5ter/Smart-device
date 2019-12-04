@@ -46,7 +46,20 @@
   margin-top: 37px;
 }
 
+.about-company__link:hover {
+  color: $primary-text-color;
+  background-color: $title-text-color;
+}
+
+.about-company__link:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 @media (max-width: $tablet-width) {
+  .about-company {
+    margin-bottom: 82px;
+  }
+
   .about-company__title {
     font-size: 32px;
     line-height: 45px;

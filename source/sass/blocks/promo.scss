@@ -71,6 +71,15 @@
   text-align: center;
 }
 
+.promo__link--advice:hover {
+  background-color: white;
+  color: #00b2ff;
+}
+
+.promo__link--advice:active {
+  color: rgba(0, 178, 255, 0.3);
+}
+
 .promo__link--scroll {
   width: 100px;
   transform: rotate(-90deg) translate(-127px, -39px);
@@ -78,6 +87,10 @@
   font-size: 14px;
   line-height: 16px;
   opacity: 0.5;
+}
+
+.promo__link--scroll:hover {
+  color: #00b2ff;
 }
 
 @media (max-width: $tablet-width) {
