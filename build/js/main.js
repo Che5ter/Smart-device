@@ -7,6 +7,9 @@ var changingText = document.querySelector('.about-company__js-text-change');
 var siteMap = document.querySelector('.site-map');
 var mapButton = document.querySelector('.page-footer__toggle-button--map-open');
 var contactButton = document.querySelector('.page-footer__toggle-button--contact-close');
+var buttonModalClose = document.querySelector('.modal-form button[type="button"]');
+var buttonModalOpen = document.querySelector('.main-nav__feedback');
+var overlay = document.querySelector('.overlay');
 
 var changeTextPromo = function () {
   if (adviceButton) {
@@ -30,7 +33,7 @@ var changeTextAboutCompany = function () {
 
 var checkResolutionMobile = function () {
   if (siteMap && mapButton && contactButton) {
-    if (document.body.clientWidth <= (MOBILE_WIDTH - 17)) {
+    if (document.body.clientWidth <= MOBILE_WIDTH) {
       if (!siteMap.classList.contains('visually-hidden')) {
         siteMap.classList.add('visually-hidden');
         mapButton.classList.remove('visually-hidden');
@@ -42,7 +45,7 @@ var checkResolutionMobile = function () {
 
 var checkResolutionOther = function () {
   if (siteMap && mapButton && contactButton) {
-    if (document.body.clientWidth > (MOBILE_WIDTH - 17)) {
+    if (document.body.clientWidth > MOBILE_WIDTH) {
       if (siteMap.classList.contains('visually-hidden')) {
         siteMap.classList.remove('visually-hidden');
         mapButton.classList.add('visually-hidden');
@@ -51,6 +54,34 @@ var checkResolutionOther = function () {
     }
   }
 };
+
+var closeModal = function (evt) {
+  if (evt.target.offsetParent === null || evt.target.offsetParent.tagName === 'BODY') {
+    overlay.classList.remove('overlay--show');
+    overlay.classList.add('overlay--close');
+  }
+};
+
+overlay.addEventListener('click', closeModal);
+
+buttonModalClose.addEventListener('click', function () {
+  overlay.classList.remove('overlay--show');
+  overlay.classList.add('overlay--close');
+});
+
+buttonModalOpen.addEventListener('click', function (evt) {
+  evt.preventDefault();
+  overlay.classList.remove('overlay--close');
+  overlay.classList.add('overlay--show');
+});
+
+document.addEventListener('keydown', function (evt) {
+  evt.preventDefault();
+  if (evt.keyCode === 27 || evt.keyCode === 88) {
+    overlay.classList.remove('overlay--show');
+    overlay.classList.add('overlay--close');
+  }
+});
 
 window.addEventListener('resize', function () {
   checkResolutionOther();
