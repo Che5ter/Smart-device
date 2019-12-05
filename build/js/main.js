@@ -10,6 +10,7 @@ var contactButton = document.querySelector('.page-footer__toggle-button--contact
 var buttonModalClose = document.querySelector('.modal-form button[type="button"]');
 var buttonModalOpen = document.querySelector('.main-nav__feedback');
 var overlay = document.querySelector('.overlay');
+var form = document.querySelector('.modal-form form');
 
 var changeTextPromo = function () {
   if (adviceButton) {
@@ -90,3 +91,29 @@ window.addEventListener('resize', function () {
 });
 
 checkResolutionMobile();
+
+var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
+
+// Localstorage
+var saveLocalStorage = function (list) {
+  list.forEach(function (element) {
+    var id = element.getAttribute('id');
+    localStorage.setItem(id, element.value);
+  });
+};
+
+
+form.addEventListener('change', function (evt) {
+  if (evt.target.matches('input') || evt.target.matches('textarea')) {
+    saveLocalStorage(elements);
+  }
+});
+
+
+window.addEventListener('load', function () {
+  if (localStorage.getItem('modal-form__input-text') !== null) {
+    elements.forEach(function (element) {
+      element.value = localStorage.getItem(element.getAttribute('id'));
+    });
+  }
+});
