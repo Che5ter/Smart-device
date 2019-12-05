@@ -76,7 +76,6 @@ buttonModalOpen.addEventListener('click', function (evt) {
 });
 
 document.addEventListener('keydown', function (evt) {
-  evt.preventDefault();
   if (evt.keyCode === 27 || evt.keyCode === 88) {
     overlay.classList.remove('overlay--show');
     overlay.classList.add('overlay--close');
