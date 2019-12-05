@@ -11,6 +11,7 @@ var buttonModalClose = document.querySelector('.modal-form button[type="button"]
 var buttonModalOpen = document.querySelector('.main-nav__feedback');
 var overlay = document.querySelector('.overlay');
 var form = document.querySelector('.modal-form form');
+var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
 
 var changeTextPromo = function () {
   if (adviceButton) {
@@ -92,9 +93,9 @@ window.addEventListener('resize', function () {
 
 checkResolutionMobile();
 
-var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
 
-// Localstorage
+// Добавление в Localstorage значений формы в модальном окне
+
 var saveLocalStorage = function (list) {
   list.forEach(function (element) {
     var id = element.getAttribute('id');
