@@ -12,15 +12,19 @@
   background: url("../img/2005-desktop@1x.png") -15px 5px no-repeat;
 }
 
-.about-company__title {
+.about-company__wrapper h2 {
+  margin: 0;
   font-size: 36px;
+  font-family: $roboto-condensed;
   line-height: 51px;
   color: $secondary-text-color;
+  font-weight: normal;
 }
 
 .about-company__wrapper p {
   padding-top: 6px;
   font-size: 16px;
+  font-family: $pt-mono;
   line-height: 22px;
   color: $secondary-text-color;
 }
@@ -43,6 +47,7 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-align: center;
+  text-decoration: none;
   margin-top: 37px;
 }
 
@@ -60,7 +65,7 @@
     margin-bottom: 82px;
   }
 
-  .about-company__title {
+  .about-company__wrapper h2 {
     font-size: 32px;
     line-height: 45px;
   }
@@ -92,7 +97,7 @@
     margin-top: 49px;
   }
 
-  .about-company__title {
+  .about-company__wrapper h2 {
     font-size: 28px;
     line-height: 39px;
   }
