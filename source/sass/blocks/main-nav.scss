@@ -11,28 +11,9 @@
   flex-direction: row;
 }
 
-.main-nav__logo-text {
-  padding-left: 18px;
-  padding-top: 6px;
-}
-
-.main-nav__logo-text p {
-  margin: 0;
-
-  &:first-child {
-    font-family: $roboto-condensed;
-    font-weight: bold;
-    font-size: 25px;
-    line-height: 29px;
-  }
-
-  &:nth-child(2) {
-    font-family: $roboto;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 14px;
-    color: #788891;
-  }
+.main-nav__logo img {
+  width: 202px;
+  height: 54px;
 }
 
 .main-nav__menu {
