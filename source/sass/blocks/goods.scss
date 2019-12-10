@@ -90,7 +90,7 @@
   }
 
   .goods__link {
-    width: 716px;
+    width: 100%;
     height: 256px;
     overflow: hidden;
     min-height: 0;
@@ -126,8 +126,9 @@
   }
 
   .goods__link img {
-    width: 715px;
+    width: 100%;
     height: auto;
+    transform: translateY(-50%);
   }
 }
 
@@ -148,7 +149,7 @@
   }
 
   .goods__link {
-    width: 290px;
+    width: 100%;
     height: 256px;
   }
 
@@ -159,7 +160,7 @@
   }
 
   .goods__link img {
-    width: 290px;
+    width: 100%;
   }
 
   .goods__link h3 {
@@ -173,5 +174,9 @@
 
   .page-footer__social {
     padding-top: 27px;
+  }
+
+  .goods__item:nth-child(3n) {
+    margin-right: 0;
   }
 }
