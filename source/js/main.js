@@ -1,9 +1,8 @@
 'use strict';
 
 var MOBILE_WIDTH = 768;
-var TABLET_WIDTH = 1023;
+var MAX_SYMBOL_TEXT = 211;
 var adviceButton = document.querySelector('.promo__link--advice');
-var changingText = document.querySelector('.about-company__js-text-change');
 var siteMap = document.querySelector('.site-map');
 var mapButton = document.querySelector('.page-footer__toggle-button--map-open');
 var contactButton = document.querySelector('.page-footer__toggle-button--contact-close');
@@ -12,6 +11,8 @@ var buttonModalOpen = document.querySelector('.main-nav__feedback');
 var overlay = document.querySelector('.overlay');
 var form = document.querySelector('.modal-form form');
 var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
+var aboutCompanyParagraphs = document.querySelectorAll('.about-company__wrapper p');
+
 
 var changeTextPromo = function () {
   if (adviceButton) {
@@ -19,16 +20,6 @@ var changeTextPromo = function () {
       adviceButton.innerHTML = 'Бесплатная консультация';
     } else {
       adviceButton.innerHTML = 'Получить бесплатную консультацию';
-    }
-  }
-};
-
-var changeTextAboutCompany = function () {
-  if (changingText) {
-    if (document.body.clientWidth <= TABLET_WIDTH) {
-      changingText.innerHTML = 'Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог..';
-    } else {
-      changingText.innerHTML = 'Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND. Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД), РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители светотехники России.';
     }
   }
 };
@@ -88,7 +79,7 @@ window.addEventListener('resize', function () {
   checkResolutionOther();
   checkResolutionMobile();
   changeTextPromo();
-  changeTextAboutCompany();
+  makeParagraphLimitation(aboutCompanyParagraphs);
 });
 
 checkResolutionMobile();
@@ -118,3 +109,14 @@ window.addEventListener('load', function () {
     });
   }
 });
+
+var makeParagraphLimitation = function (someBlocks) {
+  if (window.matchMedia('(max-width: 1023px)').matches) {
+    someBlocks.forEach(function (element) {
+      var paragraphText = element.textContent;
+      if (paragraphText.length > MAX_SYMBOL_TEXT) {
+        element.textContent = (paragraphText.slice(0, MAX_SYMBOL_TEXT) + '..');
+      }
+    });
+  }
+};

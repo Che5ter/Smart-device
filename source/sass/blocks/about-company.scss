@@ -62,7 +62,7 @@
 
 @media (max-width: $tablet-width) {
   .about-company {
-    margin-bottom: 82px;
+    margin-bottom: 42px;
   }
 
   .about-company__wrapper h2 {
@@ -72,6 +72,7 @@
 
   .about-company__wrapper {
     padding-left: 213px;
+    padding-bottom: 40px;
     background: url("../img/2005-tablet@1x.png") -1px -2px no-repeat;
   }
 
