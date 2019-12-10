@@ -3,6 +3,12 @@
   background: url("../img/airplane@1x.png") 350px 161px no-repeat,
     url("../img/polygon-feedback.svg") 196px 93px no-repeat;
   background-color: $title-text-color;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background: url("../img/airplane@2x.png") 351px 161px / 511px 288px no-repeat,
+      url("../img/polygon-feedback.svg") 196px 93px no-repeat;
+    background-color: $title-text-color;
+  }
 }
 
 .feedback__wrapper {
@@ -156,7 +162,7 @@
 }
 
 .feedback__submit input[type="checkbox"]:checked + label::before {
-  background: url("../img/vector-checkbox.svg") 50% 50% no-repeat;
+  background: url("../img/form-vector-checkbox.svg") 50% 50% no-repeat;
 }
 
 @media (max-width: $tablet-width) {

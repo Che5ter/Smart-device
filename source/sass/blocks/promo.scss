@@ -1,6 +1,12 @@
 .promo {
   background: url("../img/promo-background-desk@1x.png") round;
   background-color: #1b2d37;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background: url("../img/promo-background@2x.png") no-repeat;
+    background-size: 1920px 878px;
+    background-color: #1b2d37;
+  }
 }
 
 .promo__description {
@@ -12,6 +18,11 @@
   background: url("../img/board-desktop@1x.png") 868px 175px no-repeat,
     url("../img/promo-polygon.png") 783px 55px no-repeat;
   color: $primary-text-color;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background: url("../img/board-desktop@2x.png") 867px 174px / 705px 515px no-repeat,
+      url("../img/promo-polygon.png") 783px 55px no-repeat;
+  }
 }
 
 .promo__description-text {
@@ -28,6 +39,7 @@
   padding-top: 6px;
   padding-left: 99px;
   padding-right: 60px;
+  font-family: $pt-mono;
   font-size: 22px;
   line-height: 34px;
 }
@@ -43,6 +55,8 @@
 }
 
 .promo__title {
+  margin: 0;
+  font-family: $roboto-condensed;
   font-weight: bold;
   font-size: 80px;
   line-height: 94px;
@@ -68,7 +82,9 @@
   line-height: 19px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  text-decoration: none;
   text-align: center;
+  color: $primary-text-color;
 }
 
 .promo__link--advice:hover {
@@ -87,6 +103,8 @@
   font-size: 14px;
   line-height: 16px;
   opacity: 0.5;
+  color: $primary-text-color;
+  text-decoration: none;
 }
 
 .promo__link--scroll:hover {

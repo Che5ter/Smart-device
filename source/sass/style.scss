@@ -1,4 +1,5 @@
 @import "variables.scss";
+@import "visually-hidden.scss";
 @import "scaffolding.scss";
 @import "mixins.scss";
 @import "normalize.scss";
@@ -10,5 +11,5 @@
 @import "blocks/goods.scss";
 @import "blocks/feedback.scss";
 @import "blocks/page-footer.scss";
-@import "blocks/main.scss";
+@import "blocks/main-block.scss";
 @import "blocks/overlay.scss";
