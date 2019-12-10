@@ -11,6 +11,10 @@
   flex-direction: row;
 }
 
+.main-nav__logo img:first-child {
+  display: none;
+}
+
 .main-nav__menu {
   display: block;
   position: relative;
@@ -149,18 +153,17 @@
 }
 
 @media (max-width: $mobile-width) {
-  .main-nav__logo-text {
-    @include visually-hidden;
-  }
-
-  .main-nav__logo img {
-    width: 38px;
-    height: 38px;
-  }
-
   .main-nav {
     padding-top: 17px;
     padding-left: 17px;
+  }
+
+  .main-nav__logo img:first-child {
+    display: flex;
+  }
+
+  .main-nav__logo img:last-child {
+    @include visually-hidden;
   }
 
   .main-nav__contact {

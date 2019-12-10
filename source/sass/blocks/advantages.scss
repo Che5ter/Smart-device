@@ -60,9 +60,6 @@
   stroke: $title-text-color;
 }
 
-.advantages__item--confidentiality {
-  padding-top: 2px;
-}
 
 .advantages__item:hover {
   background-color: $title-text-color;
@@ -77,16 +74,10 @@
   stroke: $primary-text-color;
 }
 
-.advantages__item--price p {
-  margin: 0;
-  padding-top: 15px;
-  padding-left: 42px;
-}
-
 @media (max-width: $tablet-width) {
   .advantages {
     margin-bottom: -9px;
-    margin-top: 27px;
+    margin-top: 24px;
     padding-top: 0;
   }
 
@@ -96,7 +87,7 @@
 
   .advantages__item {
     min-height: auto;
-    min-width: 345px;
+    min-width: auto;
   }
 
   .advantages__item:nth-child(2n-1) {
@@ -110,7 +101,7 @@
   .advantages__item h3 {
     padding-top: 5px;
     padding-left: 24px;
-    padding-right: 43px;
+    padding-right: 12px;
     padding-bottom: 7px;
   }
 
@@ -125,38 +116,6 @@
   .advantages__item svg {
     margin-left: 25px;
     margin-top: 23px;
-  }
-
-  .advantages__item--price h3 {
-    padding-right: 5px;
-  }
-
-  .advantages__item--confidentiality h3 {
-    padding-right: 5px;
-  }
-
-  .advantages__item--clocks svg {
-    width: 30px;
-    height: 35px;
-  }
-
-  .advantages__item--hired svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .advantages__item--confidentiality svg {
-    width: 30px;
-    height: 26px;
-  }
-
-  .advantages__item--price svg {
-    width: 32px;
-    height: 32px;
-  }
-
-  .advantages__item--confidentiality p {
-    padding-top: 9px;
   }
 }
 
@@ -177,6 +136,7 @@
     max-width: none;
     min-width: 290px;
     margin-right: 0;
+    margin-bottom: -8px;
   }
 
   .advantages__item:nth-child(2n-1) {
@@ -184,52 +144,11 @@
   }
 
   .advantages__item h3 {
+    padding-top: 9px;
+    padding-right: 18px;
+    padding-bottom: 7px;
+    padding-left: 24px;
     font-size: 20px;
     line-height: 28px;
-  }
-
-  .advantages__item--clocks h3 {
-    padding-top: 9px;
-  }
-
-  .advantages__item--hired svg {
-    margin-top: 15px;
-  }
-
-  .advantages__item--hired h3 {
-    padding-top: 14px;
-  }
-
-  .advantages__item--hired p {
-    padding-right: 0;
-  }
-
-  .advantages__item--confidentiality h3 {
-    padding-right: 20px;
-    padding-top: 8px;
-    padding-bottom: 0;
-  }
-
-  .advantages__item--confidentiality p {
-    padding-bottom: 44px;
-    padding-top: 0;
-  }
-
-  .advantages__item--confidentiality svg {
-    margin-top: 14px;
-  }
-
-  .advantages__item--price svg {
-    margin-top: 14px;
-  }
-
-  .advantages__item--price h3 {
-    padding-top: 7px;
-  }
-
-  .advantages__item--price p {
-    padding-right: 15px;
-    padding-top: 4px;
-    padding-bottom: 26px;
   }
 }
