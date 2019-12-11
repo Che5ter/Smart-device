@@ -3,15 +3,47 @@
 var MOBILE_WIDTH = 768;
 var MAX_SYMBOL_TEXT = 211;
 var adviceButton = document.querySelector('.promo__link--advice');
-var siteMap = document.querySelector('.site-map');
-var mapButton = document.querySelector('.page-footer__toggle-button--map-open');
-var contactButton = document.querySelector('.page-footer__toggle-button--contact-close');
+var infoBlock = document.querySelector('.page-footer__info-block');
 var buttonModalClose = document.querySelector('.modal-form button[type="button"]');
 var buttonModalOpen = document.querySelector('.main-nav__feedback');
 var overlay = document.querySelector('.overlay');
 var form = document.querySelector('.modal-form form');
 var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
 var aboutCompanyParagraphs = document.querySelectorAll('.about-company__wrapper p');
+var siteMap = document.querySelector('.page-footer__site-map');
+var siteContacts = document.querySelector('.page-footer__contacts');
+
+siteMap.classList.remove('page-footer__site-map--nojs');
+siteContacts.classList.remove('page-footer__contacts--nojs');
+
+if (infoBlock) {
+  infoBlock.addEventListener('click', function (evt) {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      if (evt.target === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
+        siteMap.classList.toggle('page-footer__site-map--closed');
+        if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
+          siteContacts.classList.add('page-footer__contacts--closed');
+        }
+      } else if (evt.target.parentElement === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
+        siteMap.classList.toggle('page-footer__site-map--closed');
+        if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
+          siteContacts.classList.add('page-footer__contacts--closed');
+        }
+      }
+      if (evt.target === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
+        siteContacts.classList.toggle('page-footer__contacts--closed');
+        if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
+          siteMap.classList.add('page-footer__site-map--closed');
+        }
+      } else if (evt.target.parentElement === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
+        siteContacts.classList.toggle('page-footer__contacts--closed');
+        if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
+          siteMap.classList.add('page-footer__site-map--closed');
+        }
+      }
+    }
+  });
+}
 
 
 var changeTextPromo = function () {
@@ -24,7 +56,7 @@ var changeTextPromo = function () {
   }
 };
 
-var checkResolutionMobile = function () {
+/* var checkResolutionMobile = function () {
   if (siteMap && mapButton && contactButton) {
     if (document.body.clientWidth <= MOBILE_WIDTH) {
       if (!siteMap.classList.contains('visually-hidden')) {
@@ -46,7 +78,7 @@ var checkResolutionOther = function () {
       }
     }
   }
-};
+}; */
 
 var closeModal = function (evt) {
   if (evt.target.offsetParent === null || evt.target.offsetParent.tagName === 'BODY') {
@@ -76,13 +108,13 @@ document.addEventListener('keydown', function (evt) {
 });
 
 window.addEventListener('resize', function () {
-  checkResolutionOther();
-  checkResolutionMobile();
+  /* checkResolutionOther();
+  checkResolutionMobile();*/
   changeTextPromo();
   makeParagraphLimitation(aboutCompanyParagraphs);
 });
 
-checkResolutionMobile();
+// checkResolutionMobile();
 
 
 // Добавление в Localstorage значений формы в модальном окне
@@ -109,6 +141,8 @@ window.addEventListener('load', function () {
     });
   }
 });
+
+// Ставим ограничение на кол-во символов в параграфе блока о компании
 
 var makeParagraphLimitation = function (someBlocks) {
   if (window.matchMedia('(max-width: 1023px)').matches) {
