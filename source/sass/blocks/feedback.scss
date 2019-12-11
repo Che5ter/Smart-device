@@ -22,7 +22,7 @@
 }
 
 .feedback__form {
-  max-width: 570px;
+  width: 570px;
   min-height: 244px;
 }
 
@@ -35,7 +35,6 @@
 
 .feedback__contacts-name {
   margin-right: 31px;
-  margin-bottom: 39px;
 }
 
 .feedback__form h2 {
@@ -83,6 +82,7 @@
 
 .feedback__form input[type="text"] {
   min-width: 270px;
+  margin-bottom: 39px;
 }
 
 .feedback__form input[type="tel"] {
@@ -101,12 +101,17 @@
   line-height: 22px;
   background-color: #19baff;
   border: none;
+  color: $primary-text-color;
 }
 
 .feedback__form input[type="text"]:hover,
 .feedback__form input[type="tel"]:hover,
 .feedback__form textarea:hover {
   border: 1px solid $primary-text-color;
+}
+
+.feedback__form input[type="text"]:hover {
+  margin-bottom: 37px;
 }
 
 .feedback__submit label:hover::before {

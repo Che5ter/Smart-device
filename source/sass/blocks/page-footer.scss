@@ -101,6 +101,14 @@
   text-decoration: none;
 }
 
+.page-footer__contacts a:hover p {
+  color: $title-text-color;
+}
+
+.page-footer__contacts a:active p {
+  color: rgba(0, 178, 255, 0.3);
+}
+
 .page-footer__contacts p {
   margin: 0;
   font-size: 15px;
@@ -136,6 +144,15 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+
+.page-footer__copyrights a:hover {
+  color: $title-text-color;
+}
+
+.page-footer__copyrights a:active {
+  color: rgba(0, 178, 255, 0.3);
+}
+
 
 .page-footer__copyrights span:nth-child(2) {
   margin-left: 75px;
@@ -344,6 +361,7 @@
     right: 1px;
     top: 19px;
     background: url("../img/icon-minus.svg") no-repeat;
+    outline: none;
   }
 
   .page-footer__site-map--closed .page-footer__toggle-button,
@@ -356,6 +374,7 @@
     right: 1px;
     top: 15px;
     background: url("../img/icon-plus.svg") no-repeat;
+    outline: none;
   }
 
   .page-footer__site-map {

@@ -1,10 +1,8 @@
 'use strict';
 
-var MOBILE_WIDTH = 768;
 var MAX_SYMBOL_TEXT = 211;
-var adviceButton = document.querySelector('.promo__link--advice');
 var infoBlock = document.querySelector('.page-footer__info-block');
-var buttonModalClose = document.querySelector('.modal-form button[type="button"]');
+var buttonModalClose = document.querySelector('.modal-form__button-close');
 var buttonModalOpen = document.querySelector('.main-nav__feedback');
 var overlay = document.querySelector('.overlay');
 var form = document.querySelector('.modal-form form');
@@ -16,74 +14,38 @@ var siteContacts = document.querySelector('.page-footer__contacts');
 siteMap.classList.remove('page-footer__site-map--nojs');
 siteContacts.classList.remove('page-footer__contacts--nojs');
 
-if (infoBlock) {
-  infoBlock.addEventListener('click', function (evt) {
-    if (window.matchMedia('(max-width: 767px)').matches) {
-      if (evt.target === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
-        siteMap.classList.toggle('page-footer__site-map--closed');
-        if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
-          siteContacts.classList.add('page-footer__contacts--closed');
-        }
-      } else if (evt.target.parentElement === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
-        siteMap.classList.toggle('page-footer__site-map--closed');
-        if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
-          siteContacts.classList.add('page-footer__contacts--closed');
-        }
+infoBlock.addEventListener('click', function (evt) {
+  if (window.matchMedia('(max-width: 767px)').matches) {
+    if (evt.target === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
+      siteMap.classList.toggle('page-footer__site-map--closed');
+      if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
+        siteContacts.classList.add('page-footer__contacts--closed');
       }
-      if (evt.target === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
-        siteContacts.classList.toggle('page-footer__contacts--closed');
-        if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
-          siteMap.classList.add('page-footer__site-map--closed');
-        }
-      } else if (evt.target.parentElement === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
-        siteContacts.classList.toggle('page-footer__contacts--closed');
-        if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
-          siteMap.classList.add('page-footer__site-map--closed');
-        }
+    } else if (evt.target.parentElement === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
+      siteMap.classList.toggle('page-footer__site-map--closed');
+      if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
+        siteContacts.classList.add('page-footer__contacts--closed');
       }
     }
-  });
-}
-
-
-var changeTextPromo = function () {
-  if (adviceButton) {
-    if (document.body.clientWidth <= MOBILE_WIDTH) {
-      adviceButton.innerHTML = 'Бесплатная консультация';
-    } else {
-      adviceButton.innerHTML = 'Получить бесплатную консультацию';
-    }
-  }
-};
-
-/* var checkResolutionMobile = function () {
-  if (siteMap && mapButton && contactButton) {
-    if (document.body.clientWidth <= MOBILE_WIDTH) {
-      if (!siteMap.classList.contains('visually-hidden')) {
-        siteMap.classList.add('visually-hidden');
-        mapButton.classList.remove('visually-hidden');
-        contactButton.classList.remove('visually-hidden');
+    if (evt.target === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
+      siteContacts.classList.toggle('page-footer__contacts--closed');
+      if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
+        siteMap.classList.add('page-footer__site-map--closed');
+      }
+    } else if (evt.target.parentElement === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
+      siteContacts.classList.toggle('page-footer__contacts--closed');
+      if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
+        siteMap.classList.add('page-footer__site-map--closed');
       }
     }
   }
-};
-
-var checkResolutionOther = function () {
-  if (siteMap && mapButton && contactButton) {
-    if (document.body.clientWidth > MOBILE_WIDTH) {
-      if (siteMap.classList.contains('visually-hidden')) {
-        siteMap.classList.remove('visually-hidden');
-        mapButton.classList.add('visually-hidden');
-        contactButton.classList.add('visually-hidden');
-      }
-    }
-  }
-}; */
+});
 
 var closeModal = function (evt) {
   if (evt.target.offsetParent === null || evt.target.offsetParent.tagName === 'BODY') {
     overlay.classList.remove('overlay--show');
     overlay.classList.add('overlay--close');
+    document.body.style.overflow = '';
   }
 };
 
@@ -92,10 +54,12 @@ overlay.addEventListener('click', closeModal);
 buttonModalClose.addEventListener('click', function () {
   overlay.classList.remove('overlay--show');
   overlay.classList.add('overlay--close');
+  document.body.style.overflow = '';
 });
 
 buttonModalOpen.addEventListener('click', function (evt) {
   evt.preventDefault();
+  document.body.style.overflow = 'hidden';
   overlay.classList.remove('overlay--close');
   overlay.classList.add('overlay--show');
 });
@@ -104,17 +68,13 @@ document.addEventListener('keydown', function (evt) {
   if (evt.keyCode === 27 || evt.keyCode === 88) {
     overlay.classList.remove('overlay--show');
     overlay.classList.add('overlay--close');
+    document.body.style.overflow = '';
   }
 });
 
 window.addEventListener('resize', function () {
-  /* checkResolutionOther();
-  checkResolutionMobile();*/
-  changeTextPromo();
   makeParagraphLimitation(aboutCompanyParagraphs);
 });
-
-// checkResolutionMobile();
 
 
 // Добавление в Localstorage значений формы в модальном окне
