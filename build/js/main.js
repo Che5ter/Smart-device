@@ -114,3 +114,48 @@ var makeParagraphLimitation = function (someBlocks) {
     });
   }
 };
+
+var formFeedback = document.getElementById('feedback__form-input-tel');
+var formModal = document.getElementById('modal-form__input-tel');
+var maskOptions = {
+  mask: '+{7}(000)000-00-00'
+};
+
+window.IMaskk(formFeedback, maskOptions);
+window.IMaskk(formModal, maskOptions);
+
+/* **************************************************************************** */
+
+// собираем все якоря; устанавливаем время анимации и количество кадров
+var anchors = [].slice.call(document.querySelectorAll('a[href*="#"]'));
+var animationTime = 300;
+var framesCount = 20;
+
+anchors.forEach(function (item) {
+  // каждому якорю присваиваем обработчик события
+  item.addEventListener('click', function (evt) {
+    // убираем стандартное поведение
+    evt.preventDefault();
+
+    // для каждого якоря берем соответствующий ему элемент и определяем его координату Y
+    var coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+
+    // запускаем интервал, в котором
+    var scroller = setInterval(function () {
+      // считаем на сколько скроллить за 1 такт
+      var scrollBy = coordY / framesCount;
+
+      // если к-во пикселей для скролла за 1 такт больше расстояния до элемента
+      // и дно страницы не достигнуто
+      if (scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+        // то скроллим на к-во пикселей, которое соответствует одному такту
+        window.scrollBy(0, scrollBy);
+      } else {
+        // иначе добираемся до элемента и выходим из интервала
+        window.scrollTo(0, coordY);
+        clearInterval(scroller);
+      }
+    // время интервала равняется частному от времени анимации и к-ва кадров
+    }, animationTime / framesCount);
+  });
+});
