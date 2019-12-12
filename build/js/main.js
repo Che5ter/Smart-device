@@ -121,10 +121,10 @@ var maskOptions = {
   mask: '+{7}(000)000-00-00'
 };
 
-window.IMaskk(formFeedback, maskOptions);
-window.IMaskk(formModal, maskOptions);
+window.iMask(formFeedback, maskOptions);
+window.iMask(formModal, maskOptions);
 
-/* **************************************************************************** */
+/* Плавный скролл по якорю */
 
 // собираем все якоря; устанавливаем время анимации и количество кадров
 var anchors = [].slice.call(document.querySelectorAll('a[href*="#"]'));

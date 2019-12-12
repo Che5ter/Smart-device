@@ -64,7 +64,8 @@
   text-transform: uppercase;
 }
 
-.promo__link--advice {
+.promo__link--advice,
+.promo__link--advice-mobile {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,6 +86,10 @@
   text-decoration: none;
   text-align: center;
   color: $primary-text-color;
+}
+
+.promo__link--advice-mobile {
+  display: none;
 }
 
 .promo__link--advice:hover {
@@ -188,6 +193,11 @@
   }
 
   .promo__link--advice {
+    display: none;
+  }
+
+  .promo__link--advice-mobile {
+    display: flex;
     margin: 0;
     margin-top: 24px;
   }

@@ -62,7 +62,8 @@
 
 @media (max-width: $tablet-width) {
   .about-company {
-    margin-bottom: 42px;
+    margin-top: 72px;
+    margin-bottom: 47px;
   }
 
   .about-company__wrapper h2 {
@@ -87,8 +88,8 @@
 
 @media (max-width: $mobile-width) {
   .about-company {
-    margin-bottom: 65px;
-    margin-top: 65px;
+    margin-bottom: 20px;
+    margin-top: 61px;
   }
 
   .about-company__wrapper {
@@ -109,5 +110,9 @@
 
   .about-company__link {
     margin-top: 28px;
+  }
+
+  .about-company__wrapper p {
+    margin-bottom: 32px;
   }
 }

@@ -136,13 +136,20 @@
 
 .page-footer__copyrights a {
   text-decoration: none;
-  margin-left: auto;
   font-family: $pt-mono;
   color: rgba(27, 45, 55, 0.5);
   font-size: 13px;
   line-height: 24px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.page-footer__link.copyright {
+  margin-left: auto;
+}
+
+.page-footer__link.confidentiality {
+  margin-left: 10%;
 }
 
 .page-footer__copyrights a:hover {
@@ -270,7 +277,7 @@
   }
 
   .page-footer__info-block {
-    margin-top: 64px;
+    margin-top: 62px;
   }
 
   .page-footer__site-map h3 {
@@ -279,6 +286,7 @@
 
   .page-footer__contacts {
     margin-right: 12px;
+    width: auto;
   }
 
   .page-footer__copyrights span:nth-child(3) {
@@ -288,6 +296,18 @@
 
   .page-footer__copyrights {
     margin-top: 58px;
+  }
+
+  .page-footer__list.site-map {
+    height: auto;
+  }
+
+  .site-map .page-footer__item {
+    width: auto;
+  }
+
+  .page-footer__link.confidentiality {
+    margin-left: 3px;
   }
 }
 
@@ -436,5 +456,9 @@
   .page-footer__copyrights {
     margin-top: 55px;
     margin-bottom: 25px;
+  }
+
+  .page-footer__link.copyright {
+    margin-left: 0;
   }
 }

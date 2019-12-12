@@ -1,24 +1,24 @@
 .feedback {
   margin-bottom: 65px;
-  background: url("../img/airplane@1x.png") 350px 161px no-repeat,
-    url("../img/polygon-feedback.svg") 196px 93px no-repeat;
   background-color: $title-text-color;
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background: url("../img/airplane@2x.png") 351px 161px / 511px 288px no-repeat,
-      url("../img/polygon-feedback.svg") 196px 93px no-repeat;
-    background-color: $title-text-color;
-  }
 }
 
 .feedback__wrapper {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  max-width: 1197px;
+  max-width: 1540px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding-left: 15px;
+  padding-right: 187px;
   padding-top: 90px;
+  background: url("../img/airplane@1x.png") 160px 161px no-repeat,
+    url("../img/polygon-feedback.svg") 6px 95px no-repeat;
+
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    background: url("../img/airplane@2x.png") 160px 161px/511px 288px no-repeat,
+      url("../img/polygon-feedback.svg") 6px 95px no-repeat;
+  }
 }
 
 .feedback__form {
@@ -186,17 +186,20 @@
 
 @media (max-width: $tablet-width) {
   .feedback {
-    background-image: none;
     margin-bottom: 19px;
   }
 
-  .feedback__form {
-    max-width: 590.85px;
-  }
-
   .feedback__wrapper {
+    background-image: none;
+    padding-left: 91px;
+    padding-right: 87px;
     justify-content: center;
     padding-top: 80px;
+  }
+
+  .feedback__form {
+    width: auto;
+    max-width: 590.85px;
   }
 
   .feedback__form h2 {
@@ -205,6 +208,7 @@
   }
 
   .feedback__form input[type="text"] {
+    margin-bottom: 41px;
     min-width: 279.88px;
   }
 
@@ -222,8 +226,13 @@
     padding: 16px 14px 17px 20px;
   }
 
+  .feedback__form textarea {
+    min-height: 161px;
+    padding-top: 14px;
+  }
+
   .feedback__submit {
-    margin-top: 51px;
+    margin-top: 47px;
     margin-bottom: 104px;
   }
 
@@ -245,10 +254,22 @@
   .feedback__wrapper {
     min-width: 290px;
     padding-top: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .feedback__form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: auto;
+    max-width: none;
   }
 
   .feedback__form form {
-    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
   }
 
   .feedback__form input[type="text"],
@@ -257,16 +278,20 @@
   }
 
   .feedback__contacts-name {
+    width: 100%;
     margin-right: 0;
-    margin-bottom: 31px;
+    margin-bottom: -9px;
   }
 
   .feedback__contacts-tel {
+    width: 100%;
     margin-bottom: 28px;
   }
 
   .feedback__form input[type="text"] {
+    width: 100%;
     margin-right: 0;
+    padding-top: 13px;
     padding-left: 17px;
   }
 
@@ -306,6 +331,7 @@
   }
 
   .feedback__form input[type="tel"] {
+    width: 100%;
     padding-left: 17px;
     padding-top: 13px;
   }
