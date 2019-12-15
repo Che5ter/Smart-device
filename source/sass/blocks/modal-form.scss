@@ -80,7 +80,7 @@
 
 .modal-form__submit {
   min-height: 46px;
-  margin-top: 33px;
+  margin-top: 6px;
   margin-bottom: 35px;
   padding: 0 40px;
   background: none;
@@ -129,7 +129,7 @@
   background: url("../img/form-vector-checkbox.svg") 50% 50% no-repeat;
 }
 
-.modal-form button[type="button"] {
+.modal-form__button-close {
   position: absolute;
   top: 15px;
   right: 17px;
@@ -160,6 +160,11 @@
   }
 }
 
+.modal-form__button-close:hover {
+  transform: scale(1.2);
+}
+
 .modal-form textarea {
+  min-height: 104px;
   resize: none;
 }
