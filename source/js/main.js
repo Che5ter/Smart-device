@@ -7,8 +7,7 @@ var overlay = document.querySelector('.overlay');
 var form = document.querySelector('.modal-form form');
 var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
 var aboutCompanyParagraphs = document.querySelectorAll('.about-company__wrapper p');
-var accordeonElementsHTML = document.querySelectorAll('.js-accordeon');
-var accordeonElements = Array.from(accordeonElementsHTML);
+var accordeonElements = document.querySelectorAll('.js-accordeon');
 
 var closeAllAccordeons = function () {
   accordeonElements.forEach(function (element) {
