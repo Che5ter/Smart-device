@@ -1,71 +1,48 @@
 'use strict';
 
 var MAX_SYMBOL_TEXT = 211;
-var infoBlock = document.querySelector('.page-footer__info-block');
 var buttonModalClose = document.querySelector('.modal-form__button-close');
 var buttonModalOpen = document.querySelector('.main-nav__feedback');
 var overlay = document.querySelector('.overlay');
 var form = document.querySelector('.modal-form form');
 var elements = document.querySelectorAll('.modal-form input, .modal-form textarea');
 var aboutCompanyParagraphs = document.querySelectorAll('.about-company__wrapper p');
-var siteMap = document.querySelector('.page-footer__site-map');
-var siteContacts = document.querySelector('.page-footer__contacts');
-var mapToggleBlock = siteMap.querySelector('.page-footer__toggle-block');
-var contactsToggleBlock = siteContacts.querySelector('.page-footer__toggle-block');
+var accordeonElementsHTML = document.querySelectorAll('.js-accordeon');
+var accordeonElements = Array.from(accordeonElementsHTML);
 
-siteMap.classList.remove('page-footer__site-map--nojs');
-siteContacts.classList.remove('page-footer__contacts--nojs');
-
-var makeToggle = function (evt, target, firstBlock, secondBlock, firstClass, secondClass) {
-  if (evt.target === target) {
-    firstBlock.classList.toggle(firstClass);
-    if (!secondBlock.classList.contains(secondClass)) {
-      secondBlock.classList.add(secondClass);
-    }
-  } else if (evt.target.parentElement === target) {
-    firstBlock.classList.toggle(firstClass);
-    if (!secondBlock.classList.contains(secondClass)) {
-      secondBlock.classList.add(secondClass);
-    }
-  }
+var closeAllAccordeons = function () {
+  accordeonElements.forEach(function (element) {
+    element.classList.add('js-accordeon-closed');
+    element.classList.remove('js-accordeon-opened');
+  });
 };
 
-infoBlock.addEventListener('click', function (evt) {
-  if (window.matchMedia('(max-width: 767px)').matches) {
-    makeToggle(evt, mapToggleBlock, siteMap, siteContacts, 'page-footer__site-map--closed', 'page-footer__contacts--closed');
-    makeToggle(evt, contactsToggleBlock, siteContacts, siteMap, 'page-footer__contacts--closed', 'page-footer__site-map--closed');
-  }
-});
+var toggleAccordeon = function (element) {
+  element.classList.toggle('js-accordeon-closed');
+  element.classList.toggle('js-accordeon-opened');
+};
 
-/*
-infoBlock.addEventListener('click', function (evt) {
-  if (window.matchMedia('(max-width: 767px)').matches) {
-    if (evt.target === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
-      siteMap.classList.toggle('page-footer__site-map--closed');
-      if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
-        siteContacts.classList.add('page-footer__contacts--closed');
-      }
-    } else if (evt.target.parentElement === document.querySelector('.page-footer__site-map .page-footer__toggle-block')) {
-      siteMap.classList.toggle('page-footer__site-map--closed');
-      if (!siteContacts.classList.contains('.page-footer__contacts--closed')) {
-        siteContacts.classList.add('page-footer__contacts--closed');
-      }
-    }
-    if (evt.target === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
-      siteContacts.classList.toggle('page-footer__contacts--closed');
-      if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
-        siteMap.classList.add('page-footer__site-map--closed');
-      }
-    } else if (evt.target.parentElement === document.querySelector('.page-footer__contacts .page-footer__toggle-block')) {
-      siteContacts.classList.toggle('page-footer__contacts--closed');
-      if (!siteMap.classList.contains('.page-footer__site-map--closed')) {
-        siteMap.classList.add('page-footer__site-map--closed');
-      }
-    }
-  }
-});
+var onAccorderonHeadClick = function (evt) {
+  var accordeonElement = evt.currentTarget.closest('.js-accordeon');
 
-*/
+  if (accordeonElement.classList.contains('js-accordeon-closed')) {
+    closeAllAccordeons();
+  }
+
+  toggleAccordeon(accordeonElement);
+};
+
+var initAccordeon = function (element) {
+  var head = element.querySelector('.js-accordeon-head');
+
+  head.addEventListener('click', onAccorderonHeadClick);
+  element.classList.add('js-accordeon-closed');
+};
+
+
+accordeonElements.forEach(function (element) {
+  initAccordeon(element);
+});
 
 var closeModal = function (evt) {
   if (evt.target.offsetParent === null || evt.target.offsetParent.tagName === 'BODY') {

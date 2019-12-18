@@ -380,8 +380,7 @@
     padding-bottom: 27px;
   }
 
-  .page-footer__site-map--open .page-footer__toggle-button,
-  .page-footer__contacts--open .page-footer__toggle-button {
+  .js-accordeon-opened .page-footer__toggle-button {
     display: block;
     position: absolute;
     width: 20px;
@@ -391,17 +390,17 @@
     outline: none;
   }
 
-  .page-footer__site-map--open .page-footer__toggle-button {
+  .js-accordeon-opened .page-footer__toggle-button {
     right: 1px;
     top: 18px;
   }
 
-  .page-footer__contacts--open .page-footer__toggle-button {
+  .page-footer__contacts.js-accordeon-opened .page-footer__toggle-button {
     right: 1px;
     top: 36px;
   }
 
-  .page-footer__site-map--closed .page-footer__toggle-button {
+  .js-accordeon-closed .page-footer__toggle-button {
     display: block;
     position: absolute;
     width: 20px;
@@ -413,7 +412,7 @@
     outline: none;
   }
 
-  .page-footer__contacts--closed .page-footer__toggle-button {
+  .page-footer__contacts.js-accordeon-closed .page-footer__toggle-button {
     background: url("../img/icon-plus.svg") no-repeat;
     top: 28px;
   }
@@ -458,17 +457,23 @@
     margin-top: -4px;
   }
 
-  .page-footer__site-map--open .site-map {
+  .page-footer__contacts .contacts,
+  .page-footer__site-map .site-map {
+    display: flex;
+    height: auto;
+  }
+
+  .js-accordeon-opened .site-map {
     display: flex;
     height: auto;
     padding-bottom: 26px;
   }
 
-  .page-footer__site-map--closed .site-map {
+  .js-accordeon-closed .site-map {
     display: none;
   }
 
-  .page-footer__contacts--open .contacts {
+  .js-accordeon-opened .contacts {
     display: flex;
     margin-top: 5px;
     margin-left: 3px;
@@ -476,18 +481,12 @@
     padding-bottom: 26px;
   }
 
-  .page-footer__contacts--closed .contacts {
+  .js-accordeon-closed .contacts {
     display: none;
   }
 
   .site-map .page-footer__item {
     width: auto;
-  }
-
-  .page-footer__contacts--nojs .contacts,
-  .page-footer__site-map--nojs .site-map {
-    display: flex;
-    height: auto;
   }
 
   .page-footer__copyrights a {
