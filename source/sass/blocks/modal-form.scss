@@ -54,8 +54,7 @@
 .modal-form input[type="text"]:hover,
 .modal-form input[type="tel"]:hover,
 .modal-form textarea:hover {
-  border: 1px solid $primary-text-color;
-  margin-bottom: 28px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
 .modal-form input::-webkit-input-placeholder,

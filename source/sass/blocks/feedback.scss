@@ -117,11 +117,7 @@
 .feedback__form input[type="text"]:hover,
 .feedback__form input[type="tel"]:hover,
 .feedback__form textarea:hover {
-  border: 1px solid $primary-text-color;
-}
-
-.feedback__form input[type="text"]:hover {
-  margin-bottom: 37px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.5);
 }
 
 .feedback__submit label:hover::before {
