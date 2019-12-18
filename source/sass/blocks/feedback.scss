@@ -7,23 +7,33 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  max-width: 1540px;
+  max-width: 1195px;
   margin: 0 auto;
   padding-left: 15px;
-  padding-right: 187px;
+  padding-right: 15px;
   padding-top: 90px;
-  background: url("../img/airplane@1x.png") 160px 161px no-repeat,
-    url("../img/polygon-feedback.svg") 6px 95px no-repeat;
-
-  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
-    background: url("../img/airplane@2x.png") 160px 161px/511px 288px no-repeat,
-      url("../img/polygon-feedback.svg") 6px 95px no-repeat;
-  }
 }
 
 .feedback__form {
   width: 570px;
   min-height: 244px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 600px;
+    top: -90px;
+    left: -784px;
+    background: url("../img/airplane@1x.png") 160px 161px no-repeat,
+      url("../img/polygon-feedback.svg") 6px 95px no-repeat;
+
+    @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+      background: url("../img/airplane@2x.png") 160px 161px/511px 288px no-repeat,
+        url("../img/polygon-feedback.svg") 6px 95px no-repeat;
+    }
+  }
 }
 
 .feedback__form form {
